@@ -3,6 +3,8 @@ package com.example.databasetryv2;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.sql.*;
@@ -34,7 +36,7 @@ public class ShowQuestionStudent implements Initializable {
     private ToggleGroup marked_answer1, marked_answer2, marked_answer3, marked_answer4, marked_answer5;
     @FXML
     private Button Submit;
-
+    static Pane panenow = new Pane();
     int gradquet = 0;
     int gradexam = 0;
     int idexam = 0;
@@ -51,6 +53,7 @@ public class ShowQuestionStudent implements Initializable {
     ArrayList<RadioButton> Answercolquest3 = new ArrayList<>();
     ArrayList<RadioButton> Answercolquest4 = new ArrayList<>();
     ArrayList<String> answerstudent = new ArrayList<>();
+    ArrayList<String> correctAnswerrandom = new ArrayList<>();
 
     @FXML
     private void submitquest() throws ClassNotFoundException, SQLException {
@@ -79,7 +82,7 @@ public class ShowQuestionStudent implements Initializable {
             String answertogle5 = marked_answer5.selectedToggleProperty().getValue().toString();
             answerstudent.add(answertogle5.substring(answertogle1.indexOf("'")));
             for (int i = 0; i < answerstudent.size(); i++) {
-                if (answerstudent.get(i).contains(correctanswercolumnfromdb.get(i))) {
+                if (answerstudent.get(i).contains(correctAnswerrandom.get(i))) {
                     countcorrectanswer++;
                 }
             }
@@ -96,6 +99,7 @@ public class ShowQuestionStudent implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("Your Grade Is " + (countcorrectanswer * 2) + " From " + gradexam);
                     alert.show();
+                    panenow.getChildren().clear();
                     fundeletequst();
                     return;
                 }
@@ -142,14 +146,19 @@ public class ShowQuestionStudent implements Initializable {
         Answercolquest4.add(answer45);
     }
 
-    public void funGetQuestion(String emailstudent, String courname) throws ClassNotFoundException, SQLException {
+    public void funGetQuestion(String emailstudent, String courname, Button button, Pane pane) throws ClassNotFoundException, SQLException {
         questioncontentfromdb.clear();
         Answercolumn1fromdb.clear();
         Answercolumn2fromdb.clear();
         Answercolumn3fromdb.clear();
         Answercolumn4fromdb.clear();
-
+        correctanswercolumnfromdb.clear();
+        correctAnswerrandom.clear();
         emailstud = emailstudent;
+        panenow = pane;
+        for (int i = 0; i < questcontent.size(); i++) {
+            questcontent.get(i).setText("");
+        }
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost/electronic_exam", "root", "");
@@ -178,11 +187,11 @@ public class ShowQuestionStudent implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("No Exam");
             alert.show();
+            pane.getChildren().clear();
             Submit.setVisible(false);
             return;
         }
         Submit.setVisible(true);
-
         String Query3 = "SELECT * FROM question where id_exam=?";
         PreparedStatement preparedStatement3 = con.prepareStatement(Query3);
         preparedStatement3.setInt(1, idexam);
@@ -206,17 +215,20 @@ public class ShowQuestionStudent implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("this exam you perform before");
             alert.show();
+            pane.getChildren().clear();
             fundeletequst();
             return;
         }
         int random = 0;
+
         if (questioncontentfromdb.size() >= 5) {
             for (int i = 0; i < questcontent.size(); i++) {
-                random = randomWithRange(0, questioncontentfromdb.size()-1);
+                random = randomWithRange(0, questioncontentfromdb.size() - 1);
 
-                for (int j = 0; j <questcontent.size() ; j++) {
-                    if(questcontent.get(j).getText()==questioncontentfromdb.get(random)){
-                        random = randomWithRange(0, questioncontentfromdb.size()-1);
+
+                for (int j = 0; j < questcontent.size(); j++) {
+                    if (questcontent.get(j).getText() == questioncontentfromdb.get(random)) {
+                        random = randomWithRange(0, questioncontentfromdb.size() - 1);
                     }
                 }
 
@@ -229,8 +241,15 @@ public class ShowQuestionStudent implements Initializable {
                 Answercolquest3.get(i).setText(Answercolumn3fromdb.get(random));
 
                 Answercolquest4.get(i).setText(Answercolumn4fromdb.get(random));
+
+                correctAnswerrandom.add(correctanswercolumnfromdb.get(random));
             }
         } else {
+            pane.getChildren().clear();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("No Exam");
+            alert.show();
+            pane.getChildren().clear();
             fundeletequst();
         }
         con.close();
@@ -240,19 +259,15 @@ public class ShowQuestionStudent implements Initializable {
     }
 
     private void fundeletequst() {
-        for (int i = 0; i < questioncontentfromdb.size(); i++) {
+        for (int i = 0; i < questcontent.size(); i++) {
             questcontent.get(i).setText("");
-        }
-        for (int i = 0; i < Answercolumn1fromdb.size(); i++) {
+
             Answercolquest1.get(i).setText("");
-        }
-        for (int i = 0; i < Answercolumn2fromdb.size(); i++) {
+
             Answercolquest2.get(i).setText("");
-        }
-        for (int i = 0; i < Answercolumn3fromdb.size(); i++) {
+
             Answercolquest3.get(i).setText("");
-        }
-        for (int i = 0; i < Answercolumn4fromdb.size(); i++) {
+
             Answercolquest4.get(i).setText("");
         }
         Submit.setVisible(false);

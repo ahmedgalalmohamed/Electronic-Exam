@@ -34,7 +34,8 @@ public class Student_SlidbarController implements Initializable {
     private VBox main_pane;
     @FXML
     private Label lab_email;
-
+    @FXML
+    private Button cloud_exam, ai_exam, soft_exam, programming_exam, os_exam, database_exam;
     static String emailstudent;
 
     TryClass tryClass = new TryClass();
@@ -49,8 +50,8 @@ public class Student_SlidbarController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentFrame.fxml"));
             root = fxmlLoader.load();
             ShowQuestionStudent showQuestionStudent = fxmlLoader.getController();
-            showQuestionStudent.funGetQuestion(emailstudent, "Artificial Intelligence");
             main_pane.getChildren().add(root);
+            showQuestionStudent.funGetQuestion(emailstudent, "Artificial Intelligence", ai_exam, main_pane);
         } catch (IOException ex) {
             Logger.getLogger(Student_SlidbarController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException throwables) {
@@ -70,8 +71,8 @@ public class Student_SlidbarController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentFrame.fxml"));
             root = fxmlLoader.load();
             ShowQuestionStudent showQuestionStudent = fxmlLoader.getController();
-            showQuestionStudent.funGetQuestion(emailstudent, "Cloud Computing");
             main_pane.getChildren().add(root);
+            showQuestionStudent.funGetQuestion(emailstudent, "Cloud Computing", cloud_exam, main_pane);
         } catch (IOException | ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Student_SlidbarController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -87,8 +88,8 @@ public class Student_SlidbarController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentFrame.fxml"));
             root = fxmlLoader.load();
             ShowQuestionStudent showQuestionStudent = fxmlLoader.getController();
-            showQuestionStudent.funGetQuestion(emailstudent, "DataBase");
             main_pane.getChildren().add(root);
+            showQuestionStudent.funGetQuestion(emailstudent, "DataBase", database_exam, main_pane);
         } catch (IOException ex) {
             Logger.getLogger(Student_SlidbarController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException throwables) {
@@ -108,8 +109,8 @@ public class Student_SlidbarController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentFrame.fxml"));
             root = fxmlLoader.load();
             ShowQuestionStudent showQuestionStudent = fxmlLoader.getController();
-            showQuestionStudent.funGetQuestion(emailstudent, "Operating System");
             main_pane.getChildren().add(root);
+            showQuestionStudent.funGetQuestion(emailstudent, "Operating System", os_exam, main_pane);
         } catch (IOException ex) {
             Logger.getLogger(Student_SlidbarController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException throwables) {
@@ -129,8 +130,8 @@ public class Student_SlidbarController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentFrame.fxml"));
             root = fxmlLoader.load();
             ShowQuestionStudent showQuestionStudent = fxmlLoader.getController();
-            showQuestionStudent.funGetQuestion(emailstudent, "Java Programming");
             main_pane.getChildren().add(root);
+            showQuestionStudent.funGetQuestion(emailstudent, "Java Programming", programming_exam, main_pane);
         } catch (IOException ex) {
             Logger.getLogger(Student_SlidbarController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException throwables) {
@@ -151,8 +152,8 @@ public class Student_SlidbarController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentFrame.fxml"));
             root = fxmlLoader.load();
             ShowQuestionStudent showQuestionStudent = fxmlLoader.getController();
-            showQuestionStudent.funGetQuestion(emailstudent, "Software Engineering");
             main_pane.getChildren().add(root);
+            showQuestionStudent.funGetQuestion(emailstudent, "Software Engineering", soft_exam, main_pane);
         } catch (IOException ex) {
             Logger.getLogger(Student_SlidbarController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException throwables) {
