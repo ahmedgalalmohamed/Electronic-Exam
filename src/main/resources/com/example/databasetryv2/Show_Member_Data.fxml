@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0"
+      prefWidth="630.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.databasetryv2.UserTableView" >
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: gray;">
+            <children>
+                <Label text="Members" textFill="WHITE">
+                    <font>
+                        <Font name="Lato Bold" size="18.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <TableView fx:id="table" prefHeight="534.0" prefWidth="630.0">
+            <columns>
+                <TableColumn fx:id="name_col" prefWidth="198.0" text="Name"/>
+                <TableColumn fx:id="email_col" maxWidth="252.0" minWidth="0.0" prefWidth="230.0" text="Email"/>
+                <TableColumn fx:id="address_col" minWidth="0.0" prefWidth="201.0" text="Address"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

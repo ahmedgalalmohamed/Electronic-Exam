@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+            prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.databasetryv2.Student_SlidbarController">
+    <top>
+        <HBox prefHeight="60.0" prefWidth="200.0" styleClass="white-background" stylesheets="@../CSS/style.css"
+              BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="85.0" prefWidth="216.0"
+                       text="Electronic Exam" textFill="#161fc9">
+                    <font>
+                        <Font name="Harrington" size="27.0"/>
+                    </font>
+                </Label>
+                <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="29.0" prefWidth="6.0">
+                    <HBox.margin>
+                        <Insets top="15.0"/>
+                    </HBox.margin>
+                </Separator>
+                <Label fx:id="lab_email" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0"
+                       prefHeight="60.0" prefWidth="628.0" textFill="#161fc9">
+                    <font>
+                        <Font name="Harrington" size="27.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <content>
+                <VBox fx:id="main_pane" prefHeight="534.0" prefWidth="630.0"/>
+            </content>
+        </ScrollPane>
+    </center>
+    <left>
+        <VBox prefHeight="506.0" prefWidth="200.0" spacing="10.0" styleClass="white-background"
+              stylesheets="@../CSS/style.css" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                    <children>
+                        <Button fx:id="cloud_exam" mnemonicParsing="false" onAction="#cloud_page" prefHeight="50.0"
+                                prefWidth="187.0" text="Cloud">
+                            <font>
+                                <Font name="Cambria" size="25.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="ai_exam" mnemonicParsing="false" onAction="#ai_page" prefHeight="50.0"
+                                prefWidth="187.0" text="AI">
+                            <font>
+                                <Font name="Cambria" size="25.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="soft_exam" mnemonicParsing="false" onAction="#soft_page" prefHeight="50.0"
+                                prefWidth="187.0" text="Software">
+                            <font>
+                                <Font name="Cambria" size="25.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="programming_exam" mnemonicParsing="false" onAction="#programming_page"
+                                prefHeight="50.0" prefWidth="187.0" text="Java">
+                            <font>
+                                <Font name="Cambria" size="25.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="os_exam" mnemonicParsing="false" onAction="#os_page" prefHeight="50.0"
+                                prefWidth="187.0" text="OS">
+                            <font>
+                                <Font name="Cambria" size="25.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="database_exam" mnemonicParsing="false" onAction="#database_page"
+                                prefHeight="50.0" prefWidth="187.0" text="DataBase">
+                            <font>
+                                <Font name="Cambria" size="25.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="98.0" prefWidth="200.0" styleClass="mouse-moved"
+                      stylesheets="@../CSS/style.css">
+                    <children>
+                        <Button fx:id="log_out" mnemonicParsing="false" onAction="#return_to_signin_page"
+                                prefHeight="50.0" prefWidth="187.0" style="-fx-background-color: REd;" text="Log Out"
+                                textFill="WHITE">
+                            <font>
+                                <Font name="Cambria" size="24.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </HBox>
+            </children>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+        </VBox>
+    </left>
+</BorderPane>

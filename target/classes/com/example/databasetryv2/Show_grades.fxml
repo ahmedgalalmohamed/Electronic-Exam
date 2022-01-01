@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databasetryv2.GradeTableView">
+    <children>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: gray;">
+            <children>
+                <Label text="Grades" textFill="WHITE">
+                    <font>
+                        <Font name="Lato Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <TableView fx:id="table" prefHeight="534.0" prefWidth="630.0">
+            <columns>
+                <TableColumn fx:id="email_col" prefWidth="482.0" text="Email Student" />
+                <TableColumn fx:id="grade_col" minWidth="0.0" prefWidth="147.0" text="Grade" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="533.0" maxWidth="672.0" minHeight="363.0" minWidth="600.0" prefHeight="385.0" prefWidth="672.0"
+            styleClass="white-background" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databasetryv2.SignInController">
+    <left>
+        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="249.0" style="-fx-background-color: #FF0000;"
+              BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="232.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../IMAGES/user.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="384.0" prefWidth="423.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="68.0" prefWidth="373.0">
+                    <children>
+                        <Label text="Sign In">
+                            <font>
+                                <Font name="Arial Bold Italic" size="24.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <GridPane prefHeight="123.0" prefWidth="373.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="99.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="324.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Email">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0"/>
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txt_email" prefHeight="39.0" prefWidth="299.0" promptText="Email"
+                                   styleClass="signfield" stylesheets="@../CSS/style.css" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0"/>
+                            </GridPane.margin>
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </TextField>
+                        <Label text="Password" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0"/>
+                            </GridPane.margin>
+                        </Label>
+                        <PasswordField fx:id="txt_password" promptText="Password" styleClass="signfield"
+                                       stylesheets="@../CSS/style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="10.0" right="10.0"/>
+                            </GridPane.margin>
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </PasswordField>
+                    </children>
+                </GridPane>
+                <VBox prefHeight="70.0" prefWidth="351.0" style="-fx-spacing: 20px;">
+                    <children>
+                        <RadioButton fx:id="radstudent" mnemonicParsing="false" selected="true"
+                                     styleClass="radio-button" text="Student">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="typeofuser"/>
+                            </toggleGroup>
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets left="20.0"/>
+                            </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="raddoctor" mnemonicParsing="false" styleClass="radio-button" text="Doctor"
+                                     toggleGroup="$typeofuser">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets left="20.0"/>
+                            </VBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="radadmin" mnemonicParsing="false" styleClass="radio-button" text="Admin"
+                                     toggleGroup="$typeofuser">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <VBox.margin>
+                                <Insets left="20.0"/>
+                            </VBox.margin>
+                        </RadioButton>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" prefHeight="73.0" prefWidth="373.0">
+                    <children>
+                        <Button fx:id="btn_signin" mnemonicParsing="false" onAction="#funsignin" prefHeight="47.0"
+                                prefWidth="322.0" style="-fx-background-color: RED;" text="Sign In" textFill="WHITE">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

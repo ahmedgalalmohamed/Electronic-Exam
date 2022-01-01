@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.databasetryv2.Doctor_SlidbarController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="630.0">
+            <children>
+                <Label text="Add Exam" textFill="#ab3f3f">
+                    <font>
+                        <Font name="Gabriola" size="35.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox prefHeight="46.0" prefWidth="630.0">
+            <children>
+                <Label prefHeight="42.0" prefWidth="116.0" text="Name Exam">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="20.0" right="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="txt_name_exam" prefHeight="38.0" prefWidth="167.0">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox prefHeight="46.0" prefWidth="630.0">
+            <children>
+                <Label prefHeight="42.0" prefWidth="117.0" text="Time Exam">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="20.0" right="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="txt_time_exam" prefHeight="38.0" prefWidth="165.0">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="116.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="addexam" mnemonicParsing="false" onAction="#funaddexam" prefHeight="47.0"
+                        prefWidth="250.0" style="-fx-background-color: RED;" text="Add" textFill="WHITE">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>

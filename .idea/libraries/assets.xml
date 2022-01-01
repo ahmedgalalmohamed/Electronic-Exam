@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="assets">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Front_End/FontAwsome/jfoenix-9.0.8.jar!/com/jfoenix/assets" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

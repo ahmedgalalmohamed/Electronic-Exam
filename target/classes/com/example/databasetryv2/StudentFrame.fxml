@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="question_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databasetryv2.ShowQuestionStudent">
+    <children>
+        <VBox prefHeight="150.0" prefWidth="600.0">
+            <children>
+                <Label fx:id="question11" prefHeight="37.0" prefWidth="642.0" wrapText="true">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </Label>
+                <RadioButton fx:id="answer11" mnemonicParsing="false" selected="true" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="marked_answer1" />
+               </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="answer21" mnemonicParsing="false" toggleGroup="$marked_answer1" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer31" mnemonicParsing="false" toggleGroup="$marked_answer1" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer41" mnemonicParsing="false" toggleGroup="$marked_answer1" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </VBox>
+        <Separator maxWidth="-Infinity" prefHeight="3.0" prefWidth="486.0">
+            <VBox.margin>
+                <Insets left="60.0" />
+            </VBox.margin>
+        </Separator>
+        <VBox prefHeight="150.0" prefWidth="600.0">
+            <children>
+                <Label fx:id="question12" prefHeight="37.0" prefWidth="642.0" wrapText="true">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </Label>
+                <RadioButton fx:id="answer12" mnemonicParsing="false" selected="true" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="marked_answer2" />
+               </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="answer22" mnemonicParsing="false" toggleGroup="$marked_answer2" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer32" mnemonicParsing="false" toggleGroup="$marked_answer2" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer42" mnemonicParsing="false" toggleGroup="$marked_answer2" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </VBox>
+        <Separator maxWidth="-Infinity" prefHeight="3.0" prefWidth="486.0">
+            <VBox.margin>
+                <Insets left="60.0" />
+            </VBox.margin>
+        </Separator>
+        <VBox prefHeight="150.0" prefWidth="600.0">
+            <children>
+                <Label fx:id="question13" prefHeight="37.0" prefWidth="642.0" wrapText="true">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </Label>
+                <RadioButton fx:id="answer13" mnemonicParsing="false" selected="true" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="marked_answer3" />
+               </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="answer23" mnemonicParsing="false" toggleGroup="$marked_answer3" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer33" mnemonicParsing="false" toggleGroup="$marked_answer3" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer43" mnemonicParsing="false" toggleGroup="$marked_answer3" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </VBox>
+        <Separator maxWidth="-Infinity" prefHeight="4.0" prefWidth="486.0">
+            <VBox.margin>
+                <Insets left="60.0" />
+            </VBox.margin>
+        </Separator>
+        <VBox prefHeight="150.0" prefWidth="600.0">
+            <children>
+                <Label fx:id="question14" prefHeight="37.0" prefWidth="642.0" wrapText="true">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </Label>
+                <RadioButton fx:id="answer14" mnemonicParsing="false" selected="true" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="marked_answer4" />
+               </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="answer24" mnemonicParsing="false" toggleGroup="$marked_answer4" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer34" mnemonicParsing="false" toggleGroup="$marked_answer4" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer44" mnemonicParsing="false" toggleGroup="$marked_answer4" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </VBox>
+        <VBox prefHeight="150.0" prefWidth="600.0">
+            <children>
+                <Separator maxWidth="-Infinity" prefHeight="3.0" prefWidth="486.0">
+                    <VBox.margin>
+                        <Insets left="60.0" />
+                    </VBox.margin>
+                </Separator>
+                <Label fx:id="question15" prefHeight="37.0" prefWidth="642.0" wrapText="true">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </Label>
+                <RadioButton fx:id="answer15" mnemonicParsing="false" selected="true" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="marked_answer5" />
+               </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="answer25" mnemonicParsing="false" toggleGroup="$marked_answer5" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer35" mnemonicParsing="false" toggleGroup="$marked_answer5" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+                <RadioButton fx:id="answer45" mnemonicParsing="false" toggleGroup="$marked_answer5" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="20.0" top="7.0" />
+                    </VBox.margin>
+                </RadioButton>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="105.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="Submit" mnemonicParsing="false" onAction="#submitquest" prefHeight="55.0" prefWidth="180.0" text="Submit">
+                    <font>
+                        <Font name="Lucida Calligraphy Italic" size="24.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+        <Separator maxWidth="-Infinity" prefHeight="3.0" prefWidth="486.0" />
+    </children>
+</VBox>
