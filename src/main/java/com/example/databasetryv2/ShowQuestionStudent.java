@@ -40,6 +40,7 @@ public class ShowQuestionStudent implements Initializable {
     int gradquet = 0;
     int gradexam = 0;
     int idexam = 0;
+    static int gradestudent =0;
     String emailstud = "";
     ArrayList<String> questioncontentfromdb = new ArrayList<>();
     ArrayList<String> Answercolumn1fromdb = new ArrayList<>();
@@ -86,7 +87,7 @@ public class ShowQuestionStudent implements Initializable {
                     countcorrectanswer++;
                 }
             }
-
+            gradestudent = countcorrectanswer*2;
             String Query2 = "INSERT INTO exam_resulte (id_exam, grade, Email_stud) VALUES (?,?,?)";
             PreparedStatement preparedStatement2 = con.prepareStatement(Query2);
             preparedStatement2.setInt(1, idexam);
@@ -96,10 +97,8 @@ public class ShowQuestionStudent implements Initializable {
             try {
                 int[] rowadd = preparedStatement2.executeBatch();
                 if (rowadd.length >= 1) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("Your Grade Is " + (countcorrectanswer * 2) + " From " + gradexam);
-                    alert.show();
                     panenow.getChildren().clear();
+                    panenow.getChildren().add(new Label("The Grade = "+gradestudent));
                     fundeletequst();
                     return;
                 }
@@ -212,10 +211,8 @@ public class ShowQuestionStudent implements Initializable {
         preparedStatement4.setInt(2, idexam);
         ResultSet resultSet4 = preparedStatement4.executeQuery();
         if (resultSet4.isBeforeFirst()) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("this exam you perform before");
-            alert.show();
             pane.getChildren().clear();
+            pane.getChildren().add(new Label("The Grade = "+gradestudent));
             fundeletequst();
             return;
         }
@@ -225,14 +222,7 @@ public class ShowQuestionStudent implements Initializable {
             for (int i = 0; i < questcontent.size(); i++) {
                 random = randomWithRange(0, questioncontentfromdb.size() - 1);
 
-
-                for (int j = 0; j < questcontent.size(); j++) {
-                    if (questcontent.get(j).getText() == questioncontentfromdb.get(random)) {
-                        random = randomWithRange(0, questioncontentfromdb.size() - 1);
-                    }
-                }
-
-                questcontent.get(i).setText(questioncontentfromdb.get(random));
+                questcontent.get(i).setText((i + 1) + "." + questioncontentfromdb.get(random));
 
                 Answercolquest1.get(i).setText(Answercolumn1fromdb.get(random));
 
@@ -243,6 +233,9 @@ public class ShowQuestionStudent implements Initializable {
                 Answercolquest4.get(i).setText(Answercolumn4fromdb.get(random));
 
                 correctAnswerrandom.add(correctanswercolumnfromdb.get(random));
+
+                questioncontentfromdb.remove(random);
+
             }
         } else {
             pane.getChildren().clear();
